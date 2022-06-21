@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Student {
+  id: ID!
+  fullname: String!
+  classId: Float!
+  role: String!
+}
+
+type Class {
+  id: ID!
+  student_number: Float!
+  assigned_teacher: Float!
+}
+
+type User {
+  id: ID!
+  email: String!
+  phone: String!
+  role: String!
+}
+
+type Query {
+  students: [Student!]!
+  classes: [Class!]!
+  users: [User!]!
+}
+
+type Mutation {
+  createClass(createClassInput: CreateClassInput!): Class!
+  createUser(createUserInput: CreateUserInput!): User!
+}
+
+input CreateClassInput {
+  name: String!
+  assigned_teacher: Float
+}
+
+input CreateUserInput {
+  email: String!
+  phone: String!
+  role: String!
+}
