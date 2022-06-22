@@ -2,23 +2,26 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Student {
+type User {
   id: ID!
-  fullname: String!
-  classId: Float!
+  email: String!
+  phone: String!
+  password: String!
   role: String!
 }
 
 type Class {
   id: ID!
+  name: String!
   student_number: Float!
   assigned_teacher: Float!
 }
 
-type User {
+type Student {
   id: ID!
-  email: String!
+  fullname: String!
   phone: String!
+  class: Float!
   role: String!
 }
 
@@ -29,8 +32,15 @@ type Query {
 }
 
 type Mutation {
+  createStudent(createStudentInput: CreateStudentInput!): Student!
   createClass(createClassInput: CreateClassInput!): Class!
   createUser(createUserInput: CreateUserInput!): User!
+}
+
+input CreateStudentInput {
+  fullname: String!
+  classId: Float
+  phone: String
 }
 
 input CreateClassInput {
@@ -42,4 +52,5 @@ input CreateUserInput {
   email: String!
   phone: String!
   role: String!
+  password: String!
 }

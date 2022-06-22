@@ -13,4 +13,7 @@ export class CreateUserInput {
   @Field({nullable: false})
   role: string
 
+  @Field({nullable: false})
+  password:string
+
 }

@@ -14,14 +14,12 @@ export class ClassTeacher {
   id: number;
 
   @Field()
-  @Column()
   @ManyToOne(() => Class, (theClass) => theClass.id)
   @JoinColumn()
-  classId: number;
+  class: number;
 
   @Field()
-  @Column()
   @ManyToOne(() => User, (user) => user.id)
   @JoinColumn()
-  teacherId: number;
+  teacher: number;
 }

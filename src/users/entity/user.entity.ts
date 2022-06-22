@@ -4,20 +4,23 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 @ObjectType()
 export class User {
-
   @Field(() => ID)
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Field(() => String)
-  @Column({nullable: false})
-  email: string
+  @Column({ nullable: false })
+  email: string;
 
   @Field(() => String)
-  @Column({nullable: false})
-  phone: string
+  @Column({ nullable: false })
+  phone: string;
 
   @Field(() => String)
-  @Column({nullable: false})
-  role: string
+  @Column({ nullable: false })
+  password: string;
+
+  @Field(() => String)
+  @Column({ nullable: false })
+  role: string;
 }

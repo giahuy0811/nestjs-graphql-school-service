@@ -20,8 +20,11 @@ export class ClassService {
 
   async createClass(createClassInput: CreateClassInput){
 
-    const c = this.classRepository.create(createClassInput)
+    const c = new Class()
+    c.assigned_teacher = createClassInput.assigned_teacher
+    c.name = createClassInput.name
 
+    await this.classRepository.save(c)
 
     return c;
   }

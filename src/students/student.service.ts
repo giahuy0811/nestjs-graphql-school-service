@@ -30,9 +30,16 @@ export class StudentService {
 
   async createStudent(createStudentInput: CreateStudentInput){
 
-    const student = await this.studentRepository.create(createStudentInput)
+  
+    const student = new Student();
 
-    return student
+    student.fullname = createStudentInput.fullname;
+    student.phone = createStudentInput.phone;
+    student.class = createStudentInput.classId
+
+    await this.studentRepository.save(student);
+
+    return student;
 
   }
 
